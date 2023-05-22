@@ -1,0 +1,11 @@
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+# Creating an object of the Rectangle class
+rect = Rectangle(5, 3)
+print(rect.area())  
