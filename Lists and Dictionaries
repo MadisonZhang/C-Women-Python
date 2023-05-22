@@ -1,0 +1,110 @@
+##1. List Operations:
+fruits = ["apple", "banana", "orange"]
+print(fruits[0])  # Accessing the first element
+fruits.append("grape")  # Adding a new element
+fruits.remove("banana")  # Removing an element
+print(len(fruits))  # Getting the length of the list
+
+
+##2. Dictionary Operations:
+student = {
+    "name": "John",
+    "age": 20,
+    "major": "Computer Science"
+}
+print(student["name"])  # Accessing a value by key
+student["age"] = 21  # Modifying a value
+student["gpa"] = 3.8  # Adding a new key-value pair
+del student["major"]  # Removing a key-value pair
+print(len(student))  # Getting the number of key-value pairs
+
+
+##3.Looping through a List:
+fruits = ["apple", "banana", "orange"]
+for fruit in fruits:
+    print(fruit)
+
+
+##4.Looping through a Dictionary:
+##4.1 Rivers in countries:
+rivers={'nile': 'egypt',
+    'mississippi': 'united states',
+    'fraser': 'canada',
+    'kuskokwim': 'alaska',
+    'yangtze': 'china',}
+for x,y in rivers.items():
+  print('The',x.title(),'flows through',y.title()+'.')
+  
+##4.2 Favorite programming language:
+favorite_languages = {
+ 'jen': 'python',
+ 'sarah': 'c',
+ 'edward': 'ruby',
+ 'phil': 'python',
+ 'laya':'java',
+ }
+list_poll=['jen','sarah','edward','phil','laya','marrie','ken','jessie','dylan']
+for i in list_poll:
+  if i not in favorite_languages.keys():
+   print(i.title()+", what's your favorite programming language?")
+  else:
+   print('Thank you for taking the poll,'+i.title()+'!')
+   
+##4.3 Pets and their owners info:
+Max={'name':'max',
+    'animal':'dog',
+     'owner':'Sarah'}
+Whiskers={'name':'whiskers',
+    'animal':'cat',
+     'owner':'Tom'}
+Bubbles={'name':'bubbles',
+    'animal':'fish',
+     'owner':'Rachel'}
+Fluffy={'name':'fluffy',
+    'animal':'hamster',
+     'owner':'Alex'}
+Spike={'name':'spike',
+    'animal':'hedgedog',
+     'owner':'Emily'}
+pets=[Max,Whiskers,Bubbles,Fluffy,Spike]
+for i in pets:
+  print(i['name'].title(),'is a',i['animal'],'owned by',i['owner']+'.')
+  
+##4.4 Coffee shope menu:
+print('***\nCoffee Shop Menu\n')
+menu={'coffee':12,
+      'tea':7,
+      'iced coffee':13}
+for x,y in menu.items():
+  print(x.title(),'$',y)
+print('***')
+
+##4.5 Favorite places:
+fav_places={'Andy':
+            {'lake side',
+             'forest',
+             'park'},
+            'Marie':
+            {'seaside',
+             'mountain',
+             'downtown'},
+            'Daisy':
+            {'countryside',
+             'beach'}}
+for person, places in fav_places.items():
+  print('Here are some favorite places of',person,':')
+  for place in places:
+    print('- '+place)
+
+
+##5. Lists in dictionaries - favorite numbers: 
+favNum={'leo':[3,7,2],
+        'karmen':[2,9,10,11],
+        'tracy':[12,45,23],
+        'justin':[231,432,542,432],
+        'bella':[54,1,68,99]}#list within dictionary 
+for person,nums in favNum.items():
+  print(person.title(),'likes the following numbers:')
+  for num in nums:
+    print('',num)
+  print()
