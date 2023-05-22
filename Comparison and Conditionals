@@ -1,0 +1,29 @@
+##1.Age Comparison:
+x = input("Enter first person's name: ")
+a = int(input("Enter first person's age: "))
+y = input("Enter second person's name: ")
+b = int(input("Enter second person's age: "))
+if a > b:
+    print(x, "is", a - b, "years older than", y)
+elif a < b:
+    print(y, "is", b - a, "years older than", x)
+else:
+    print(x, "and", y, "are of the same age")
+
+
+##2.Number Guessing Game:
+import random
+rndnum = random.randint(0, 10)
+x = int(input("Guess a number between 0 and 10: "))
+if x == rndnum:
+    print("Good guess!")
+else:
+    print("Wrong! The correct guess is", rndnum)
+
+
+##3.Odd or Even Number:
+x = int(input("Enter a round number to find if it's odd or even: "))
+if x % 2 != 0:
+    print("It's odd!")
+else:
+    print("It's even!")
