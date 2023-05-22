@@ -1,0 +1,43 @@
+##1. Bank Account Balance Calculation with 'done' Option:
+balance = 0
+while True:
+    deposit = input("Please enter the money you'd like to deposit or enter 'done' to finish: ")
+    if deposit == "done":
+        break
+    try:
+        deposit = int(deposit)
+        balance += deposit
+        print("Your current balance is", balance)
+    except ValueError:
+        print("Please input numerical value only")
+
+
+##2.Word Guessing Game:
+attempts = 0
+max_attempts = 3
+while attempts <= max_attempts:
+    print("Guess the missing word!\nHow ___ are the apples?\n")
+    rating = input("Enter your first guess: ")
+    if rating == "sweet":
+        print("That’s correct!!!")
+        break
+    else:
+        attempts += 1
+        if attempts == 1:
+            print("Try again. Enter your", attempts, "guess")
+            break
+        attempts += 1
+        print(input("Try again\nEnter your third guess: "))
+        if rating == "sweet":
+            print("That’s correct!!!")
+            break
+if attempts > max_attempts:
+    print("Sorry, no more attempts. The correct answer is 'sweet'.")
+
+
+##3. Counting Even Numbers:
+count = 0
+for num in range(1, 11):
+    if num % 2 == 0:
+        count += 1
+print("There are", count, "even numbers between 1 and 10.")
