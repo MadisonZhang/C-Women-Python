@@ -27,3 +27,63 @@ if x % 2 != 0:
     print("It's odd!")
 else:
     print("It's even!")
+
+
+##4. Grading:
+score=int(input('Enter your score or done to finish: '))
+while True:
+  if score == 'done':
+    break
+  if 80<score<100:
+   print('Your grade is A')
+  elif score >70:
+   print('Your grade is B')
+  elif score >60:
+   print('Your grade is C')
+  elif score >50:
+   print('Your grade is D')
+  elif score <50:
+   print('Your grade is F')
+   
+   
+##5. Rock-paper-scissors game:
+Player1=input('Enter a choice (rock, paper, scissors):')
+Player2=input('Enter a choice (rock, paper, scissors):')
+print('Player 1 chose', Player1)
+print('Player 2 chose', Player2)
+if Player1 == Player2:
+  print('Both players chose', Player1, "It's a tie!")
+if Player1 == 'rock':
+  if Player2 == 'paper':
+    print('Paper covers rock! Player 2 wins!')
+  else:
+    print ('Rock smashes scissors! Player 1 wins!')
+elif Player1 == 'paper':
+  if Player2 == 'rock':
+    print('Paper covers rock! Player 1 wins!')
+  else:
+    print ('Scissors cut paper! Player 2 wins!')
+elif Player1 == 'scissors':
+  if Player2 == 'rock':
+    print ('Rock smashes scissors! Player 2 wins!')
+  else:
+    print ('Scissors cut paper! Player 1 wins!')
+    
+ 
+##6. Weather and suggested activity:
+temp=float(input("What's the weather today?"))
+if 5<temp<20:
+  print("It is a little breezy, but you play outside!")
+elif temp<=5:
+  print("Stay warm inside!")
+else:
+  print("Get your swimsuits on!")
+  
+  
+##7. Counting vowels in country's name:
+country=input('Enter a country name:').lower()
+vowel=country.count('a')+country.count('e')+country.count('i')+country.count('o')+country.count('u')
+if vowel == 0:
+  print('There is no vowel in ' + country)
+else:
+  print('There are', vowel,'vowels in',country)
