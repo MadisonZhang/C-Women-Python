@@ -1,0 +1,148 @@
+##1.Character Count:
+def count():
+    print('There are', len(x), 'characters in your word/sentence.')
+
+while True:
+    x = input('Enter a word or sentence or enter quit to stop:')
+    count()
+    if x.lower() == 'quit':
+        break
+
+
+##2.Basic Arithmetic Operations:
+def add(a, b):
+    sum = a + b
+    print('The sum is:', sum)
+
+def sub(a, b):
+    sub = a - b
+    print('The subtraction is:', sub)
+
+def multi(a, b):
+    multi = a * b
+    print('The multiplication is:', multi)
+
+def div(a, b):
+    div = a / b
+    print('The division is:', div)
+
+while True:
+    x = int(input('Enter a number: '))
+    y = int(input('Enter another number: '))
+    operation = input('Enter a choice of calculation (add, subtract, multiply, or divide): ')
+    if operation == 'add':
+        add(x, y)
+    elif operation == 'subtract':
+        sub(x, y)
+    elif operation == 'multiply':
+        multi(x, y)
+    elif operation == 'divide':
+        div(x, y)
+    else:
+        print('Invalid option')
+        break
+
+
+##3.Square Root Calculation:
+def f(squarer):
+    x = int(input('Enter a number: '))
+    squarer = pow(x, 0.5)
+    return squarer
+
+a = f(x)
+print('The square root of your number is:', a)
+
+
+##4.Power Calculation:
+def f(x, y):
+    return pow(x, y)
+
+while True:
+    if input('Enter no to quit or anything to proceed:').lower() == 'no':
+        break
+    else:
+        a = int(input('Enter a number: '))
+        b = int(input('Enter the number of power: '))
+        print('The power of your number is', f(a, b))
+
+
+##5.Temperature Conversion:
+def fah(x):
+    return int((x - 32) * 5 / 9)
+
+def cel(x):
+    return int((x * 9 / 5) + 32)
+
+user = input('Enter Fahrenheit to convert into Celsius or enter Celsius to convert into Fahrenheit: ')
+
+if user.lower() == 'fahrenheit':
+    a = int(input('Enter Fahrenheit temperature: '))
+    print('The Celsius degree is', fah(a), '°C')
+elif user.lower() == 'celsius':
+    a = int(input('Enter Celsius temperature: '))
+    print('The Fahrenheit degree is', cel(a), '°F')
+else:
+    print('Invalid input')
+
+
+##6.Number List and Operations:
+def f1(list):
+    return list
+
+def f2(list):
+    return 'The biggest number of your list is ' + str(max(list))
+
+list_user = []
+
+while True:
+    user = input('Enter a number to create a number list or no to quit:')
+    if user.lower() == 'no':
+        break
+    else:
+        list_user.append(int(user))
+        print(f1(list_user))
+        print(f2(list_user))
+
+
+##7.Even or Odd Check:
+def f1(x):
+    if x % 2 == 0:
+        print('Your number is even')
+    else:
+        print('Your number is odd')
+    return
+
+while True:
+    a = input('Enter a number to find if it's even or odd or no to quit: ')
+    if str(a).lower() == 'no':
+        break
+    else:
+        f1(int(a))
+
+
+##8.BMI Calculation:
+def fbmi1(x, y):
+    z = round(x / (pow(y, 2)), 2)
+    return z
+
+def fbmi2(z):
+    if z < 18.5:
+        print('You are underweight')
+    elif z > 18.5 and z < 24.9:
+        print('You are normal weight')
+    elif z > 24.9 and z < 29.9:
+        print('You are overweight')
+    elif z > 30:
+        print('You are obesity')
+
+list = []
+answer = 'yes'
+
+while answer == 'yes':
+    a = float(input('Enter your weight in kg: '))
+    b = float(input('Enter your height in meters: '))
+    fbmi1(a, b)
+    list.append(fbmi1(a, b))
+    print(list)
+    fbmi2(fbmi1(a, b))
+    answer = input('Enter another person data? (yes/no)')
