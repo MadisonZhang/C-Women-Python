@@ -1,13 +1,102 @@
-#1. Creating a class:
-class Rectangle:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
+## 1. Creating the Class - Triangle
 
+class Sides:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+class Triangle(Sides):
     def area(self):
-        return self.width * self.height
+        s = (self.a + self.b + self.c) / 2
+        return (s * (s - self.a) * (s - self.b) * (s - self.c)) ** 0.5
 
-# Creating an object of the Rectangle class
-rect = Rectangle(5, 3)
-print(rect.area()) 
+# Usage
+a = int(input('Enter side 1 of the triangle in cm: '))
+b = int(input('Enter side 2 of the triangle in cm: '))
+c = int(input('Enter side 3 of the triangle in cm: '))
+t = Triangle(a, b, c)
+print(f"The area of your triangle is: {t.area()} cm2.")
 
+
+##2. Class - User
+##2.1 Creating the User Class
+class User:
+    def __init__(self, first_name, last_name, username, email, location):
+        self.first_name = first_name.title()
+        self.last_name = last_name.title()
+        self.username = username
+        self.email = email
+        self.location = location.title()
+
+    def describe_user(self):
+        return f"{self.first_name} {self.last_name}\nUsername: {self.username}\nE-mail: {self.email}\nLocation: {self.location}"
+
+    def greet_user(self):
+        return f"Welcome back, {self.username}!"
+
+##2.2 Class Inheritance - LoggedInUser
+class LoggedInUser(User):
+    def __init__(self, first_name, last_name, username, email, location, pw, log_in_attempts):
+        super().__init__(first_name, last_name, username, email, location)
+        self.pw = pw
+        self.log_in_attempts = log_in_attempts
+
+    def increment_login_attempts(self):
+        self.log_in_attempts += 1
+        return self.log_in_attempts
+
+    def reset_login_attempts(self):
+        self.log_in_attempts = 0
+        return self.log_in_attempts
+
+    def class_method_example(self):
+        return f"This is a class method."
+
+    class_variable = "This is a class variable."
+
+##2.3 Usage
+# Creating a User instance
+user1 = User('Eric', 'Matthes', 'e_matthes', 'e_matthes@example.com', 'Alaska')
+print(user1.describe_user())
+print(user1.greet_user())
+
+# Creating a LoggedInUser instance
+loggedin_user = LoggedInUser('Willie', 'Burger', 'willieburger', 'wb@example.com', 'Ohio', '1234', 0)
+print(loggedin_user.describe_user())
+print(loggedin_user.greet_user())
+
+# Login attempts example
+login_attempts = 0
+while login_attempts < 3:
+    pw_input = input('Enter your password to log in: ')
+    if pw_input != loggedin_user.pw:
+        login_attempts = loggedin_user.increment_login_attempts()
+        print(f"Incorrect password. {loggedin_user.username}, your total log in attempts: {login_attempts} and you have {3 - login_attempts} attempts left.")
+    elif login_attempts == 3:
+        print(f"Forget your password, {loggedin_user.username}?\nYour account is temporarily locked and your log in attempts are: {loggedin_user.reset_login_attempts()}")
+    elif pw_input == loggedin_user.p
+
+
+##3. Class - Restaurant
+##3.1 Creating the Restaurant Class
+class Restaurant:
+    def __init__(self, name, cuisine_type):
+        self.name = name
+        self.cuisine_type = cuisine_type
+
+    def describe_restaurant(self):
+        return f"Restaurant: {self.name}\nCuisine Type: {self.cuisine_type}"
+
+    def open_restaurant(self):
+        return f"{self.name} is now open!"
+##3.2 Usage
+# Creating a Restaurant instance
+restaurant1 = Restaurant('The Italian Kitchen', 'Italian')
+print(restaurant1.describe_restaurant())
+print(restaurant1.open_restaurant())
+
+# Creating another Restaurant instance
+restaurant2 = Restaurant('Spice Bazaar', 'Indian')
+print(restaurant2.describe_restaurant())
+print(restaurant2.open_restaurant())
