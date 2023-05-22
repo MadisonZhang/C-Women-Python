@@ -41,3 +41,70 @@ for num in range(1, 11):
     if num % 2 == 0:
         count += 1
 print("There are", count, "even numbers between 1 and 10.")
+
+
+##4. Calculating average of user input numbers:
+sum=0
+count=0
+while count<5:
+  number=float(input('Enter a number '))
+  sum=sum+number
+  count+=1
+avg=sum/count
+print('The average is ',avg)
+
+
+##5. Ordering drinks on bar menu:
+print('****Coco Bar Menu****\n1.Hot Chocolate\n2.Latte\n3.Chai\n*********************')
+menu={1:"Hot chocolate ingredients are: Milk and cocoa powder",
+      2:"Latte ingredients are: espresso and milk",
+      3:"Chai ingredients are: milk, tea and spices"}
+order=int(input('Please select a drink from the menu:'))
+while order not in menu:
+  order=(int(input('Invalid entry. Please select another option:')))
+if order in menu:
+  print(menu[order])
+  
+
+##6. Shopping at electronic stores:
+print('****PyShop Bill******\n1. Gaming Keyboard....$9\n2. Mouse Pad..........$7\n3. HDMI cable.........$20\n*********************')
+bill={1:9,2:7,3:20,-1:0}
+order=int(input('Enter item number or enter -1 to total:'))
+sum=0
+while order not in bill:
+  order=int(input('Invalid entry. Enter item number or enter -1 to total:'))
+while order != -1:
+  sum=sum+bill[order]
+  order=int(input('Enter item number or enter -1 to total:'))
+print('The total is:',sum)
+
+
+##7. Checking if a word is palindrome:
+word = input('Enter a word: ')
+is_palindrome = True
+for i in range(len(word)//2):
+    if word[i] != word[-i-1]:
+        is_palindrome=False
+        break
+if is_palindrome:
+  print('True')
+else:
+  print('False')
+  
+
+##8. Password setting check:
+pw=input('Enter your password: ')
+if len(pw)<=7:
+  print('The password has to have more than 7 characters')
+if str(pw).isalnum()==False:
+  print('The password has to have no special characters')
+if str(pw).isnumeric()==True:
+  print('The password has to have letters')
+if not any(char.isdigit() for char in pw):
+  print('The password has to have numbers')
+if not any(c.isupper() for c in pw) or not any(c.islower() for c in pw):
+  print('The password has to have both uppercase and lowercase letters')
+if pw[0] in range(0,10):
+  print('The password cannot start with a digit')
+else:
+  print('Your password is saved!')
