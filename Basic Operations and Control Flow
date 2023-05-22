@@ -1,0 +1,33 @@
+##1. Deposit and Balance:
+balance = 0
+while True:
+    deposit = input("Please enter the money you'd like to deposit (or 'done' to finish): ")
+    if deposit == "done":
+        break
+    deposit = int(deposit)
+    balance += deposit
+    print("Your current balance is", balance)
+
+
+##2.Sum of Two Numbers:
+try:
+    a = int(input("Enter a number: "))
+    b = int(input("Enter another number: "))
+    sum = a + b
+    print("The sum is", sum)
+except ValueError:
+    print("Please enter a numerical value")
+
+
+##3.Deposit and Balance with Error Handling:
+balance = 0
+while True:
+    deposit = input("Please enter the money you'd like to deposit (or 'done' to finish): ")
+    if deposit == "done":
+        break
+    try:
+        deposit = int(deposit)
+        balance += deposit
+        print("Your current balance is", balance)
+    except ValueError:
+        print("Please input numerical value only")
