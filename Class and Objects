@@ -1,3 +1,4 @@
+1. Creating a class:
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -8,4 +9,5 @@ class Rectangle:
 
 # Creating an object of the Rectangle class
 rect = Rectangle(5, 3)
-print(rect.area())  
+print(rect.area())  # Output: 15
+
