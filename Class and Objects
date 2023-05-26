@@ -1,4 +1,4 @@
-## 1. Creating the Class - Triangle
+## 1.  Polygon Class -  Creating a Class, Inheritance, Calling Methods
 
 class Sides:
     def __init__(self, a, b, c):
@@ -19,7 +19,7 @@ t = Triangle(a, b, c)
 print(f"The area of your triangle is: {t.area()} cm2.")
 
 
-##2. Class - User
+##2. User Profile Class
 ##2.1 Creating the User Class
 class User:
     def __init__(self, first_name, last_name, username, email, location):
@@ -78,7 +78,7 @@ while login_attempts < 3:
     elif pw_input == loggedin_user.p
 
 
-##3. Class - Restaurant
+##3. Restaurant Class
 ##3.1 Creating the Restaurant Class
 class Restaurant:
     def __init__(self, name, cuisine_type):
@@ -95,8 +95,88 @@ class Restaurant:
 restaurant1 = Restaurant('The Italian Kitchen', 'Italian')
 print(restaurant1.describe_restaurant())
 print(restaurant1.open_restaurant())
+print('-------------------')
 
 # Creating another Restaurant instance
 restaurant2 = Restaurant('Spice Bazaar', 'Indian')
 print(restaurant2.describe_restaurant())
 print(restaurant2.open_restaurant())
+print('-------------------')
+
+##3.3 Inheritance - parent & child class
+class operations(Restaurant):
+  def __init__(self,name, cuisine_type,number_served):
+    super().__init__(name, cuisine_type)
+    self.number_served=number_served
+  def set_number_served(self):
+    self.number_served=int(input("Enter number of customers served:"))
+    return self.number_served
+  def increment_number_served(self):
+    self.increment_number_served=int(input("Enter number of customers served in a day of business:"))
+    self.number_served += self.increment_number_served
+    return self.number_served
+restaurant3 = operations('Hot finger', 'Mexican',0)
+print(restaurant3.describe_restaurant())
+print(restaurant3.open_restaurant())
+print(f"{restaurant3.set_number_served()} customers have been served.")
+print(f"{restaurant3.increment_number_served()} customers have been served in a day of business.")
+print('-------------------')
+
+#4. Planet Class - Creating a Class, Calling Methods
+class Planet:
+    def __init__(self, diameter, color):
+        self.diameter = diameter
+        self.color = color
+    
+    def getDiameter(self):
+        return self.diameter
+    
+    def getArea(self):
+        return 3.14 * self.diameter
+
+
+#5. Employee remuneration Class - Creating a Class, Calling methods, Conditions
+class Employee:
+  def __init__(self,emp_name,emp_id,emp_salary,emp_depart):
+    self.emp_id=emp_id
+    self.emp_name=emp_name
+    self.emp_salary=emp_salary
+    self.emp_depart=emp_depart.upper()
+  def assign_department(self,emp_depart):
+    self.emp_depart=emp_depart
+  def calculate_salary(self, salary, hours_worked):
+        overtime = 0
+        if hours_worked > 50:
+            overtime = hours_worked - 50
+        self.emp_salary = self.emp_salary + (overtime * (self.emp_salary / 50))
+  def print_employee_details(self):
+        print("\nName: ", self.emp_name)
+        print("ID: ", self.emp_id)
+        print("Salary: ", self.emp_salary)
+        print("Department: ", self.emp_depart)
+        print("----------------------")
+
+employee1 = Employee("ADAMS", "E7876", 50000, "ACCOUNTING")
+employee2 = Employee("JONES", "E7499", 45000, "RESEARCH")
+employee3 = Employee("MARTIN", "E7900", 50000, "SALES")
+employee4 = Employee("SMITH", "E7698", 55000, "OPERATIONS")
+
+print("Original Employee Details:")
+employee1.print_employee_details()
+employee2.print_employee_details()
+employee3.print_employee_details()
+employee4.print_employee_details()
+
+# Change the departments of employee1 and employee4
+employee1.assign_department('Operation')
+employee1.assign_department('SALES')
+
+# Now calculate the overtime of the employees who are eligible:
+employee2.calculate_salary(45000, 52)
+employee4.calculate_salary(45000, 60)
+
+print("Updated Employee Details:")
+employee1.print_employee_details()
+employee2.print_employee_details()
+employee3.print_employee_details()
+employee4.print_employee_details()
