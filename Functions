@@ -87,21 +87,22 @@ else:
 
 ##6.Number List and Operations:
 def f1(list):
-    return list
-
+  return list
 def f2(list):
-    return 'The biggest number of your list is ' + str(max(list))
+  return 'The biggest number of your list is '+str(max(list))
+def f3(list):
+  return 'The smallest number of your list is '+str(min(list))
 
-list_user = []
-
+list_user=[]
 while True:
-    user = input('Enter a number to create a number list or no to quit:')
-    if user.lower() == 'no':
-        break
-    else:
-        list_user.append(int(user))
-        print(f1(list_user))
-        print(f2(list_user))
+  user=input('Enter a number to create a num list or no to quit:')
+  if user.lower() == 'no':
+    break
+  else:
+    list_user.append(int(user))
+    print(f1(list_user))
+    print(f2(list_user))
+    print(f3(list_user))
 
 
 ##7.Even or Odd Check:
