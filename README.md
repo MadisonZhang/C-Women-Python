@@ -1,4 +1,4 @@
-# Madion's C-Women Repository
+# Madison's C-Women Repository
 
 Welcome to my C-Women repository! This repository serves as a showcase of my coding projects and snippets developed during the C-Women bridging program. It is intended to demonstrate my coding skills and knowledge to potential employers.
 
