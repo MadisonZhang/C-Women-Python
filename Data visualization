@@ -1,0 +1,17 @@
+## 1. Create a line chart to visualize the monthly average temperatures for a city over a year.
+import matplotlib.pyplot as plt
+months=list(range(12))
+temperatures=[-5,-4,0,6,13,18,21,21,17,10,4,-1]
+plt.xticks(ticks=months,labels=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])
+plt.xlabel('Months')
+plt.ylabel('Celcius')
+plt.title('Monthly average temperatures for Toronto over a year')
+# Styling options
+line_color = 'blue'
+line_style = '--'
+marker_style = 'o'
+# Plot the line chart with styling
+plt.plot(months, temperatures, color=line_color, linestyle=line_style, marker=marker_style)
+# Add gridlines
+plt.grid(True)
+plt.show()
