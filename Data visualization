@@ -1,4 +1,4 @@
-## 1. Create a line chart to visualize the monthly average temperatures for a city over a year.
+## 1. Line chart: the monthly average temperatures for a city over a year.
 # Description: This file contains code to plot a line chart using Matplotlib.
 
 import matplotlib.pyplot as plt
@@ -17,3 +17,45 @@ plt.plot(months, temperatures, color=line_color, linestyle=line_style, marker=ma
 # Add gridlines
 plt.grid(True)
 plt.show()
+
+##2.Bar Chart: Soft Drink Sales Performance
+### Description
+This code generates a bar chart using Matplotlib to visualize the month-over-month sales performance of soft drinks. The chart displays the sales data for two consecutive months, comparing the sales of different drink products.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def bar_chart(numbers1, numbers2, labels):
+pos = np.arange(len(labels))#to create evenly spaced positions for the bars
+    width = 0.35
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(pos, numbers1, width, color='blue', label='Last month')
+    rects2 = ax.bar(pos + width, numbers2, width, color='pink', label='This month')
+
+    ax.set_xlabel('Drink products')
+    ax.set_ylabel('Sales $k')
+    ax.set_title('Soft drink sales performance: month-over-month')
+    ax.set_xticks(pos + width / 2)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+    def autolabel(rects):
+        for rect in rects:
+            height = rect.get_height()
+            ax.annotate('{}'.format(height),
+                        xy=(rect.get_x() + rect.get_width() / 2, height),
+                        xytext=(0, 3),
+                        textcoords="offset points",
+                        ha='center', va='bottom')
+
+    autolabel(rects1)
+    autolabel(rects2)
+
+    plt.show()
+
+numbers1 = [20, 34, 45, 18]
+numbers2 = [24, 31, 40, 23]
+labels = ['soda', 'coke', 'juice', 'coconut water']
+
+bar_chart(numbers1, numbers2, labels)
