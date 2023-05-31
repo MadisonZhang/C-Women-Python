@@ -22,35 +22,23 @@ plt.show()
 ### Description
 This code generates a bar chart using Matplotlib to visualize the month-over-month sales performance of soft drinks. The chart displays the sales data for two consecutive months, comparing the sales of different drink products.
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 def bar_chart(numbers1, numbers2, labels):
-pos = np.arange(len(labels))#to create evenly spaced positions for the bars
+    pos = np.arange(len(labels))
     width = 0.35
 
     fig, ax = plt.subplots()
-    rects1 = ax.bar(pos, numbers1, width, color='blue', label='Last month')
-    rects2 = ax.bar(pos + width, numbers2, width, color='pink', label='This month')
+
+    ax.bar(pos - width/2, numbers1, width, color='blue', label='Last month')
+    ax.bar(pos + width/2, numbers2, width, color='pink', label='This month')
 
     ax.set_xlabel('Drink products')
     ax.set_ylabel('Sales $k')
     ax.set_title('Soft drink sales performance: month-over-month')
-    ax.set_xticks(pos + width / 2)
-    ax.set_xticklabels(labels)
+    ax.set_xticks(ticks=pos,labels=labels)
     ax.legend()
-
-    def autolabel(rects):
-        for rect in rects:
-            height = rect.get_height()
-            ax.annotate('{}'.format(height),
-                        xy=(rect.get_x() + rect.get_width() / 2, height),
-                        xytext=(0, 3),
-                        textcoords="offset points",
-                        ha='center', va='bottom')
-
-    autolabel(rects1)
-    autolabel(rects2)
 
     plt.show()
 
@@ -59,3 +47,22 @@ numbers2 = [24, 31, 40, 23]
 labels = ['soda', 'coke', 'juice', 'coconut water']
 
 bar_chart(numbers1, numbers2, labels)
+
+
+#3. Pie chart:Distribution of Movie Genres
+### Description
+This code generates a pie chart to visualize the distribution of movie genres in a film library. The chart represents the relative proportion of each genre based on the number of films in the library.
+
+import matplotlib.pyplot as plt
+
+def pie_chart(numbers,labels):
+  explode = (0.1, 0, 0, 0, 0)
+  plt.pie(numbers,labels=labels,explode=explode)
+  plt.xlabel('Movie genres')
+  plt.ylabel('Of total film numbers %')
+  plt.title('Distribution of movie genres in a film library')
+  plt.show()
+
+numbers = [39, 24, 20, 12, 5]
+labels = ['Comedy', 'Fiction', 'Action', 'Horror','Others']
+pie_chart(numbers,labels)
