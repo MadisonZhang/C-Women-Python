@@ -1,4 +1,6 @@
 ## 1. Create a line chart to visualize the monthly average temperatures for a city over a year.
+# Description: This file contains code to plot a line chart using Matplotlib.
+
 import matplotlib.pyplot as plt
 months=list(range(12))
 temperatures=[-5,-4,0,6,13,18,21,21,17,10,4,-1]
